@@ -1,9 +1,16 @@
 import React from 'react';
 
+import Page from './components/Page'
+import { GlobalSytles } from './styles/GlobalStyles';
+
 
 function App() {
   return (
-   <h1>Hello World</h1>
+   <>
+    <Page />
+    
+    <GlobalSytles />
+   </>
   );
 }
 
