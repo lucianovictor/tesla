@@ -1,9 +1,8 @@
-import { ModelsWrapper, ModelSection} from '../Model'
+import { ModelsWrapper, ModelSection } from '../Model'
+import DefaultOverlayContent from '../DefaultOverlayContent'
+import UniqueOverlay from '../UniqueOverlay'
 
-import DefaultOverlayContent from '../DefaultOverlayContent';
-
-import { Container } from './styles';
-
+import { Container, Spacer } from './styles'
 
 const Page: React.FC = () => {
   return (
@@ -17,24 +16,28 @@ const Page: React.FC = () => {
             'Model Four',
             'Model Five',
             'Model Six',
-            'Model Seven',
-          ].map(modelName =>(
+            'Model Seven'
+          ].map(modelName => (
             <ModelSection
-            key={modelName} 
-            className="colored"
-            modelName={modelName}
-            overlayNode={    
-            <DefaultOverlayContent 
-                label={modelName}
-                description="Order Online for Delivery"
-              />
-            }
-          />
+              key={modelName}
+              className="colored"
+              modelName={modelName}
+              overlayNode={
+                <DefaultOverlayContent
+                  label={modelName}
+                  description="Order Online for Delivery"
+                />
+              }
+            />
           ))}
         </div>
+
+        <Spacer />
+
+        <UniqueOverlay />
       </ModelsWrapper>
     </Container>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
